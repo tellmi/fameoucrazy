@@ -1,0 +1,47 @@
+/* /objects/stylesheet.qss */
+
+AdvancedAnimatedToggle {
+    qproperty-offColor: ${secondary};
+    qproperty-onColor: ${main};
+    qproperty-handleColor: ${handle};
+    qproperty-borderColor: ${main};
+}
+
+AdvancedAnimatedToggle:hover {
+    qproperty-offColor: ${secondary_hover};
+}
+
+
+AdvancedAnimatedToggle:checked {
+    border-color: ${main};
+}
+
+
+QLineEdit, QTextEdit {
+    background-color: ${background};
+    color: ${main};
+    border: 1px solid ${main};
+    border-radius: 4px;
+}
+
+QLabel {
+    color: ${main};
+}
+
+QPushButton {
+    background-color: ${main};
+    color: ${handle};
+    border-radius: 4px;
+}
+
+QPushButton:hover {
+    background-color: ${main_hover};
+}
+
+QPushButton[editable="false"] {
+    opacity: 0.6;
+}
+
+QPushButton[editable="true"] {
+    opacity: 1.0;
+}

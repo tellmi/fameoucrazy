@@ -1,0 +1,6 @@
+<ui version="4.0">
+ <class>DashboardTab</class>
+ <widget class="QWidget" name="dashboard_tab">
+  <layout class="QVBoxLayout" name="verticalLayout"/>
+ </widget>
+</ui>

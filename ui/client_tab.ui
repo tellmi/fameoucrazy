@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>client_tab</class>
+ <widget class="QWidget" name="client_tab">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>800</height>
+   </size>
+  </property>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>474</x>
+     <y>3</y>
+     <width>181</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Klienten exportieren</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/fameoucrazy_ressources.qrc">
+     <normaloff>:/icons/icons/application-export.png</normaloff>:/icons/icons/application-export.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="select_client_edit">
+   <property name="geometry">
+    <rect>
+     <x>14</x>
+     <y>3</y>
+     <width>331</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>354</x>
+     <y>3</y>
+     <width>111</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>neuer Klient</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/fameoucrazy_ressources.qrc">
+     <normaloff>:/icons/icons/plus.png</normaloff>:/icons/icons/plus.png</iconset>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>33</y>
+     <width>1700</width>
+     <height>771</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="Daten_4">
+    <attribute name="title">
+     <string>Daten</string>
+    </attribute>
+    <widget class="QGroupBox" name="client_personal_groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>551</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Persönliche Informationen</string>
+     </property>
+     <widget class="QWidget" name="gridLayoutWidget_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>531</width>
+        <height>262</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="3" column="2" colspan="3">
+        <widget class="QLineEdit" name="client_surname_edit_4"/>
+       </item>
+       <item row="6" column="4">
+        <widget class="QPushButton" name="client_death_date_clear_btn_4">
+         <property name="maximumSize">
+          <size>
+           <width>28</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset theme="QIcon::ThemeIcon::EditDelete"/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLabel" name="client_birth_name_label_4">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Geburtsname:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QPushButton" name="client_pict_upload_btn_4">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Bild hochladen</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/fameoucrazy_ressources.qrc">
+           <normaloff>:/icons/icons/drive-upload.png</normaloff>:/icons/icons/drive-upload.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QDateEdit" name="client_death_date_edit_4">
+         <property name="maximumSize">
+          <size>
+           <width>85</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="inputMethodHints">
+          <set>Qt::InputMethodHint::ImhDate</set>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2" colspan="3">
+        <widget class="QLineEdit" name="client_given_name_edit_4"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="client_middle_name_label_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Mittelname:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2" colspan="3">
+        <widget class="QLineEdit" name="client_middle_name_edit_4"/>
+       </item>
+       <item row="0" column="0" rowspan="7">
+        <widget class="QGraphicsView" name="client_pict_graphicsView_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>3</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>224</width>
+           <height>224</height>
+          </size>
+         </property>
+         <property name="sizeIncrement">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="client_given_name_label_4">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Vorname:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QDateEdit" name="client_birth_date_edit_4">
+         <property name="maximumSize">
+          <size>
+           <width>85</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="inputMethodHints">
+          <set>Qt::InputMethodHint::ImhDate|Qt::InputMethodHint::ImhPreferNumbers</set>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="client_surname_label_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Name:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="3">
+        <widget class="QPushButton" name="client_death_date_btn_4">
+         <property name="maximumSize">
+          <size>
+           <width>28</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/icons/calendar-select.png</normaloff>../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/icons/calendar-select.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="client_birth_date_label_4">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Geburtsdatum:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="client_salutation_label_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Anrede:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2" colspan="3">
+        <widget class="QLineEdit" name="client_birth_name_edit_4"/>
+       </item>
+       <item row="5" column="3">
+        <widget class="QPushButton" name="client_birth_date_btn_4">
+         <property name="minimumSize">
+          <size>
+           <width>28</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>28</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/icons/calendar-select.png</normaloff>../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/icons/calendar-select.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLabel" name="label_40">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Sterbedatum:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2" colspan="3">
+        <widget class="QComboBox" name="client_salutation_combo_4"/>
+       </item>
+       <item row="7" column="1">
+        <widget class="QPushButton" name="client_pict_delete_btn_4">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Bild löschen</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/fameoucrazy_ressources.qrc">
+           <normaloff>:/icons/icons/minus.png</normaloff>:/icons/icons/minus.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="3">
+        <widget class="QPushButton" name="pushButton_7">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="client_addr_groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>320</y>
+       <width>591</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Adresse</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <widget class="QWidget" name="gridLayoutWidget_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>570</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="client_add_grid_4">
+       <item row="1" column="4">
+        <widget class="QDateEdit" name="addr_till_date_edit_4">
+         <property name="maximumSize">
+          <size>
+           <width>85</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="inputMethodHints">
+          <set>Qt::InputMethodHint::ImhDate</set>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_41">
+         <property name="text">
+          <string>Stadt:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QLineEdit" name="lineEdit_26"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="addr_from_date_label_4">
+         <property name="text">
+          <string>ab:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QPushButton" name="addr_till_date_btn_4">
+         <property name="maximumSize">
+          <size>
+           <width>28</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/icons/calendar-select.png</normaloff>../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/icons/calendar-select.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="label_42">
+         <property name="text">
+          <string>HausNr:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_43">
+         <property name="text">
+          <string>Etage:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QDateEdit" name="addr_from_date_edit_4">
+         <property name="maximumSize">
+          <size>
+           <width>85</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="inputMethodHints">
+          <set>Qt::InputMethodHint::ImhDate</set>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="6">
+        <widget class="QPushButton" name="addr_till_date_clear_btn_4">
+         <property name="maximumSize">
+          <size>
+           <width>28</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset theme="QIcon::ThemeIcon::EditDelete"/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QLabel" name="label_44">
+         <property name="text">
+          <string>PLZ:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLabel" name="addr_till_date_label_4">
+         <property name="text">
+          <string>bis:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QFrame" name="nursing_home_accomodation_toggle_4">
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_45">
+         <property name="text">
+          <string>Straße:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="addr_from_btn_4">
+         <property name="maximumSize">
+          <size>
+           <width>28</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/icons/calendar-select.png</normaloff>../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/icons/calendar-select.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4" colspan="3">
+        <widget class="QLabel" name="addr_till_date_toggle_label_4">
+         <property name="text">
+          <string>voraussichtlich befristet</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="2">
+        <widget class="QLabel" name="nursing_home_accomodation_toggle_label_4">
+         <property name="text">
+          <string>Dies ist eine Heimunterbringung.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="QLineEdit" name="lineEdit_27"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_46">
+         <property name="text">
+          <string>Bundesland:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLabel" name="label_47">
+         <property name="text">
+          <string>Zi./App:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="4">
+        <widget class="QLineEdit" name="lineEdit_28">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1" colspan="2">
+        <widget class="QLineEdit" name="lineEdit_29">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" colspan="2">
+        <widget class="QComboBox" name="client_addr_state_combo_4"/>
+       </item>
+       <item row="0" column="3">
+        <widget class="QFrame" name="addr_till_date_toggle_4">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="4">
+        <widget class="QLineEdit" name="lineEdit_30">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QLineEdit" name="lineEdit_31">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="client_comm_groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>0</y>
+       <width>431</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Kommunikation</string>
+     </property>
+     <widget class="QWidget" name="gridLayoutWidget_13">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>238</width>
+        <height>186</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_9">
+       <item row="0" column="0">
+        <widget class="QLabel" name="client_land_line_label_4">
+         <property name="text">
+          <string>Festnetz:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="client_messenger_edit_4"/>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="client_mobile_edit_4">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QLabel" name="client_mail_intern_label_4">
+         <property name="text">
+          <string>eMail intern:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="client_mobile_label_4">
+         <property name="text">
+          <string>Mobil:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="client_email_label_4">
+         <property name="text">
+          <string>eMail:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="QLineEdit" name="client_mail_intern_edit_4">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="client_email_edit_4">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="client_land_line_edit_4">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="client_messenger_label_4">
+         <property name="text">
+          <string>Messenger:</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Betreuungsumfang_4">
+    <attribute name="title">
+     <string>Betreuungsumfang</string>
+    </attribute>
+    <widget class="QLabel" name="label_48">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>20</y>
+       <width>111</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Aktenzeichen:</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_19">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>21</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_32">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>50</y>
+       <width>181</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_49">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>141</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Beginn:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_6">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>10</y>
+       <width>131</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_20">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>100</y>
+       <width>221</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Vermögensangelegenheiten</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_21">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>251</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Vertretung gegenüber Behörden</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_22">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>191</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Aufenthaltsbestimmung</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_23">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>120</y>
+       <width>221</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Wohnungsangelegenheiten</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_50">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Betreuungsart:</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBox_24">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>151</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Gesundheitssorge </string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="care_start_date_btn_4">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>51</y>
+       <width>25</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/icons/calendar-select.png</normaloff>../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/icons/calendar-select.png</iconset>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="care_start_date_edit_4">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>50</y>
+       <width>85</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Beziehungen_4">
+    <attribute name="title">
+     <string>Beziehungen</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="Journal_4">
+    <attribute name="title">
+     <string>Journal</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="Korrespondenz_4">
+    <attribute name="title">
+     <string>Korrespondenz</string>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>664</x>
+     <y>3</y>
+     <width>151</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Klienten löschen</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/fameoucrazy_ressources.qrc">
+     <normaloff>:/icons/icons/minus.png</normaloff>:/icons/icons/minus.png</iconset>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/fameoucrazy_ressources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

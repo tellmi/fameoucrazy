@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>settings_tab</class>
+ <widget class="QWidget" name="settings_tab">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1115</width>
+    <height>615</height>
+   </rect>
+  </property>
+  <widget class="QToolBox" name="program_toolBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>1071</width>
+     <height>671</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="program_toolBoxPage1">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1071</width>
+      <height>605</height>
+     </rect>
+    </property>
+    <attribute name="label">
+     <string>Programmeinstellungen</string>
+    </attribute>
+    <widget class="QGroupBox" name="mysql_settings_groupBox">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>280</y>
+       <width>351</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>MariaDB</string>
+     </property>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>242</width>
+        <height>219</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="mysql_db_edit"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="mysql_autocommit_label">
+         <property name="text">
+          <string>AutoCommit:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="mysql_password_label">
+         <property name="text">
+          <string>Passwort:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="mysql_host_label">
+         <property name="text">
+          <string>Host:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="mysql_db_label">
+         <property name="text">
+          <string>DB-Name:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="mysql_port_label">
+         <property name="text">
+          <string>Port:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="mysql_user_edit"/>
+       </item>
+       <item row="6" column="1">
+        <widget class="QFrame" name="mysql_autocommit_toggle">
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="mysql_user_label">
+         <property name="text">
+          <string>Username:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="mysql_password_edit"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="mysql_port_edit"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="mysql_charset_label">
+         <property name="text">
+          <string>Charset:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="mysql_charset_edit"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="mysql_host_edit"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="paperless_settings_groupBox">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>280</y>
+       <width>351</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>paperless</string>
+     </property>
+     <widget class="QWidget" name="gridLayoutWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>331</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="paperless_host_edit"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="paperless_port_edit"/>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="paperless_charset_edit"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="paperless_user_edit"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="paperless_host_label">
+         <property name="text">
+          <string>Host:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="paperless_password_edit"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="paperless_db_label">
+         <property name="text">
+          <string>DB-Name:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="paperless_charset_label">
+         <property name="text">
+          <string>Charset:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="paperless_password_label">
+         <property name="text">
+          <string>Passwort:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="paperless_port_label">
+         <property name="text">
+          <string>Port:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="paperless_user_label">
+         <property name="text">
+          <string>Username:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="paperless_db_edit"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="paperless_autocommit_label">
+         <property name="text">
+          <string>AutoCommit:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QFrame" name="paperless_autocommit_toggle">
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="app_settings_groupbox">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>0</y>
+       <width>661</width>
+       <height>260</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>App-Einstellungen</string>
+     </property>
+     <widget class="QWidget" name="gridLayoutWidget_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>641</width>
+        <height>224</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="6" column="1">
+        <widget class="QComboBox" name="comboBox_2">
+         <item>
+          <property name="text">
+           <string>deutsch</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QRadioButton" name="app_settings_color_theme_radio_light">
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Light Theme</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QRadioButton" name="app_settings_color_theme_radio_dark">
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Dark Theme</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QRadioButton" name="app_settings_color_theme_radio_orange">
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Orange Theme</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Sprache:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QRadioButton" name="app_settings_color_theme_radio_custom">
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Custom Theme</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QRadioButton" name="app_settings_color_theme_radio_green">
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Green Theme</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QRadioButton" name="app_settings_color_theme_radio_system">
+         <property name="maximumSize">
+          <size>
+           <width>140</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>System Theme</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="app_settings_color_theme_label">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Farb-Thema:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="custom_color_label">
+         <property name="maximumSize">
+          <size>
+           <width>130</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Farbdefinitionen:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="color_main_btn">
+         <property name="text">
+          <string>main</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QPushButton" name="color_secondary_btn">
+         <property name="text">
+          <string>secondary</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QPushButton" name="color_handle_btn">
+         <property name="text">
+          <string>handle</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QPushButton" name="color_background_btn">
+         <property name="text">
+          <string>background</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QPushButton" name="color_error_btn">
+         <property name="text">
+          <string>error</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="advisor_groupBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>300</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Betreuer</string>
+     </property>
+     <widget class="QWidget" name="gridLayoutWidget_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>281</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QLabel" name="advisor_salutation_label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Anrede:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="advisor_given_name_label">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Vorname:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="advisor_surname_label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Name:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="advisor_birth_date_label">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Geburtsdatum:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="3">
+        <widget class="QLineEdit" name="advisor_middle_name_edit"/>
+       </item>
+       <item row="3" column="1" colspan="3">
+        <widget class="QLineEdit" name="advisor_surname_edit"/>
+       </item>
+       <item row="1" column="1" colspan="3">
+        <widget class="QLineEdit" name="advisor_given_name_edit"/>
+       </item>
+       <item row="4" column="2">
+        <widget class="QPushButton" name="advisor_birth_date_btn">
+         <property name="minimumSize">
+          <size>
+           <width>28</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>28</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/icons/calendar-select.png</normaloff>../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/icons/calendar-select.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QDateEdit" name="advisor_birth_date_edit">
+         <property name="maximumSize">
+          <size>
+           <width>85</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="inputMethodHints">
+          <set>Qt::InputMethodHint::ImhDate|Qt::InputMethodHint::ImhPreferNumbers</set>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="client_middle_name_label_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Mittelname:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="3">
+        <widget class="QComboBox" name="advisor_salutation_combo"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="gridLayoutWidget_8">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>570</y>
+       <width>200</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_9">
+      <item row="0" column="1">
+       <widget class="QFrame" name="app_settings_cancel_button_2">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>28</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QFrame" name="app_settings_save_button_2">
+        <property name="minimumSize">
+         <size>
+          <width>90</width>
+          <height>28</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="program_toolBoxPage2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>98</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <attribute name="label">
+     <string>Daten + Beziehungen</string>
+    </attribute>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

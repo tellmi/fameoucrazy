@@ -2,14 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98d30cbf-2c6b-400d-bf4c-bdc9bb9556c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/fameoucrazy.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/git-workflow.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/init.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/settings_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/theme_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/paths.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/stylesheet.qss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objects/themes.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/about.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/client_tab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/client_tab.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/dashboard_tab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/dashboard_tab.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/help.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/init.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/main_window.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/main_window.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/settings_tab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/settings_tab.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/widgets/action_button.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/widgets/action_button_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/widgets/advanced_animated_toggle.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/widgets/calendar_popup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/widgets/haptic_button.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/widgets/init.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/widgets/widget_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +48,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "tellmi"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/tellmi/fameoucrazy.git",
+    "accountId": "ae7a64c3-641b-43ea-b2b2-e5fb53fc7a2d"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 4
 }]]></component>
@@ -37,13 +71,31 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.action_button.executor": "Run",
+    "Python.action_button_manager.executor": "Run",
+    "Python.advanced_animated_toggle.executor": "Run",
+    "Python.calendar_popup.executor": "Run",
+    "Python.client_tab.executor": "Run",
+    "Python.haptic_button.executor": "Run",
+    "Python.init.executor": "Run",
+    "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/eder/PycharmProjects/fameoucrazy/managers",
     "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/managers" />
+      <recent name="$PROJECT_DIR$/ui" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/managers" />
+    </key>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="98d30cbf-2c6b-400d-bf4c-bdc9bb9556c3" name="Changes" comment="" />
