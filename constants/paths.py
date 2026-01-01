@@ -1,4 +1,4 @@
-# objects/paths.py
+# constants/paths.py
 # -*- coding: utf-8 -*-
 
 """
@@ -11,7 +11,7 @@ THEMES_FILE      - JSON file with default themes (read-only for users)
 QSS_FILE        - Stylesheet template for themes (.qss)
 DB_FILE         - Main SQLite file in the project folder
 APP_HOME        - User-specific app data folder (~/.fameoucrazy)
-CONFIG_DIR      - Subfolder in APP_HOME for settings
+SETTINGS_HOME   - Subfolder config in APP_HOME for settings
 SETTINGS_FILE   - JSON file with user settings
 DB_DIR          - Subfolder in ROOT_DIR for local database files
 LOCAL_DB_PATH   - Path to the local SQLite database
@@ -28,6 +28,7 @@ UI_FORMS_DIR = UI_DIR / "forms"
 DB_DIR = ROOT_DIR / "db"
 DB_DIR.mkdir(parents=True, exist_ok=True)
 OBJECTS_DIR = ROOT_DIR / "objects"
+CONSTANTS_DIR = ROOT_DIR / "constants"
 
 
 # ------------------------------------------------------------
@@ -51,5 +52,8 @@ else:
 APP_HOME.mkdir(parents=True, exist_ok=True)
 
 # user settings-file
-SETTINGS_FILE = APP_HOME / "fameoucrazy_settings.json"
+SETTINGS_HOME = APP_HOME / "config"
+SETTINGS_HOME.mkdir(parents=True, exist_ok=True)
+
+SETTINGS_FILE = SETTINGS_HOME / "fameoucrazy_settings.json"
 

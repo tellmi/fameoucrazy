@@ -1,37 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98d30cbf-2c6b-400d-bf4c-bdc9bb9556c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/git-workflow.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/init.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/settings_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/theme_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/paths.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/stylesheet.qss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objects/themes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/about.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/client_tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/client_tab.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/dashboard_tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/dashboard_tab.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/help.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/init.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/main_window.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/main_window.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/settings_tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/settings_tab.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/widgets/action_button.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/widgets/action_button_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/widgets/advanced_animated_toggle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/widgets/calendar_popup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/widgets/haptic_button.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/widgets/init.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/widgets/widget_manager.py" afterDir="false" />
+    <list default="true" id="98d30cbf-2c6b-400d-bf4c-bdc9bb9556c3" name="Changes" comment="ui loading and showing&#10;next step adding slots">
+      <change afterPath="$PROJECT_DIR$/constants/default_settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/init.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/salutations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constants/themes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/architecture.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/dual-host_ database_connection.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/salutation_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/salutations_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/input_form_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/form_helpers/combo_fillers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/form_helpers/date_helpers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/form_helpers/init.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/form_helpers/line_edit_helpers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/forms/field_adapters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/forms/input_form.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/forms/settings/advisor_settings_form.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/forms/settings/app_settings_form.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/forms/settings/app_themes_form.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/forms/settings/mysql_settings_form.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/forms/settings/paperless_settings_form.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/settings_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/settings_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/theme_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/theme_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/paths.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/main_window.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main_window.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/settings_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/settings_tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/settings_tab.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/settings_tab.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/action_button.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/action_button.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/action_button_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/action_button_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/haptic_button.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/haptic_button.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/widget_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/widget_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,21 +56,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "tellmi"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;tellmi&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/tellmi/fameoucrazy.git",
-    "accountId": "ae7a64c3-641b-43ea-b2b2-e5fb53fc7a2d"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/tellmi/fameoucrazy.git&quot;,
+    &quot;accountId&quot;: &quot;ae7a64c3-641b-43ea-b2b2-e5fb53fc7a2d&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="37KlonuW3lDR8USvkiCtLIi0ZW1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -71,6 +79,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Ollama CodeLlama.executor": "Run",
     "Python.action_button.executor": "Run",
     "Python.action_button_manager.executor": "Run",
     "Python.advanced_animated_toggle.executor": "Run",
@@ -79,20 +88,26 @@
     "Python.haptic_button.executor": "Run",
     "Python.init.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.ollama_generate.executor": "Run",
+    "Python.settings_manager.executor": "Run",
+    "Python.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/eder/PycharmProjects/fameoucrazy/managers",
-    "settings.editor.selected.configurable": "advanced.settings"
+    "last_opened_file_path": "/home/eder/PycharmProjects/fameoucrazy/ui/forms/settings",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ui/forms/settings" />
+      <recent name="$PROJECT_DIR$/ui/form_helpers" />
       <recent name="$PROJECT_DIR$/managers" />
       <recent name="$PROJECT_DIR$/ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/constants" />
       <recent name="$PROJECT_DIR$/managers" />
     </key>
   </component>
@@ -104,6 +119,30 @@
       <option name="presentableId" value="Default" />
       <updated>1766659820987</updated>
     </task>
+    <task id="LOCAL-00001" summary="ui loading and showing&#10;next step adding slots">
+      <option name="closed" value="true" />
+      <created>1766796056291</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1766796056291</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ui loading and showing&#10;next step adding slots" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui loading and showing&#10;next step adding slots" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/managers/settings_manager.py</url>
+          <line>3</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

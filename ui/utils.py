@@ -13,10 +13,8 @@ def get_all_child_widgets(root: QWidget) -> list[QWidget]:
     - field mapping
     - validation logic
     """
-    widgets = []
-
-    for child in root.findChildren(QWidget):
-        widgets.append(child)
-        widgets.extend(get_all_child_widgets(child))
-
+    widgets = {}
+    for w in root.findChildren(QWidget):
+        if w.objectName():
+            widgets[w.objectName()] = w
     return widgets

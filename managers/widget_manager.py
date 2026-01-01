@@ -1,4 +1,4 @@
-# ui/witgets/widget_manager.py
+# managers/widget_manager.py
 # -*- coding: utf-8 -*-
 
 from .dashboard_tab import DashboardTab

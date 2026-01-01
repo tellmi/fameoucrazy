@@ -4,8 +4,9 @@
 import json
 import logging
 from PySide6.QtGui import QGuiApplication, QPalette, QColor
-from objects.paths import THEMES_FILE, QSS_FILE
+from constants.paths import QSS_FILE
 from .settings_manager import SettingsManager
+from constants.themes import THEMES
 
 
 class ThemeManager:
@@ -13,32 +14,30 @@ class ThemeManager:
         "main", "secondary", "handle", "background", "error"
     })
 
-    def __init__(self, widget, settings_manager, themes_file=None):
+    def __init__(self, widget=None, settings_manager=None):
+        """
+        :param widget: Optional QWidget reference for theme application
+        :param settings_manager: Required to fetch custom theme & saved theme
+        """
         self.widget = widget
         self.settings_manager = settings_manager
-        self.themes_file = themes_file or THEMES_FILE
         self.qss_file = QSS_FILE
 
         self.themes = self._load_and_prepare_themes()
         self.current_theme_name = None
         self.current_theme = None
-
         self._saved_theme_snapshot = None
 
     def _load_and_prepare_themes(self) -> dict:
-        if not self.themes_file.exists():
-            raise RuntimeError("themes.json not found")
+        """Load themes from the THEMES dict and merge custom theme from settings."""
+        if "light" not in THEMES:
+            raise RuntimeError("THEMES must include a 'light' theme")
 
-        data = json.loads(self.themes_file.read_text(encoding="utf-8"))
-
-        if "light" not in data:
-            raise RuntimeError("themes.json MUST have a 'light' theme")
-
-        base_theme = data["light"]
+        base_theme = THEMES["light"]
         themes = {}
 
-        # normalize file-based themes
-        for name, theme in data.items():
+        # normalize all predefined themes
+        for name, theme in THEMES.items():
             themes[name] = self._normalize_theme(theme, base_theme)
 
         # add system theme
@@ -50,7 +49,6 @@ class ThemeManager:
         custom_theme = {}
         if self.settings_manager:
             custom_theme = self.settings_manager.get_custom_theme() or {}
-
         themes["custom"] = self._normalize_theme(custom_theme, base_theme)
 
         return themes
