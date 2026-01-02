@@ -1,17 +1,15 @@
-# ui/settings_tab.py
+# app_windows/settings/settings_tab.py
 # -*- coding: utf-8 -*-
 
 import logging
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QScrollArea  # import QScrollArea here
+from PySide6.QtWidgets import QWidget, QVBoxLayout
 from PySide6.QtUiTools import QUiLoader
-from PySide6.QtCore import QFile, QTimer
+from PySide6.QtCore import QFile
 
 from ui.utils import get_all_child_widgets
-from managers.action_button_manager import ActionButtonManager
-
 from app_windows.settings.sub_tabs.app_settings_subtab import AppSettingsSubTab
 from app_windows.settings.sub_tabs.app_themes_subtab import AppThemesSubTab
-#from app_windows.settings.sub_tabs.data_relations_subtab import DataRelationsSubTab
+# from app_windows.settings.sub_tabs.data_relations_subtab import DataRelationsSubTab
 
 
 class SettingsTab(QWidget):
@@ -21,124 +19,69 @@ class SettingsTab(QWidget):
         self.settings_manager = settings_manager
         self.theme_manager = theme_manager
 
-        self.load_ui()
+        self._load_ui()
         self._init_subtabs()
-
-        # Load saved settings into forms
         self.populate_forms_from_settings()
 
-        # Initialize ActionButtonManager
-        self.action_button_manager = ActionButtonManager(main_window=self)
-        self._prepare_action_buttons()
-
-        self.subtabs = [
-            self.app_subtab,
-            self.theme_subtab,
-            self.data_relations_subtab
-        ]
-
-    def load_ui(self):
+    def _load_ui(self):
+        """Load the main settings_tab UI (container for all subtabs)."""
         ui_file = QFile("app_windows/settings/settings_tab.ui")
         if not ui_file.open(QFile.ReadOnly):
             raise RuntimeError("Cannot open settings_tab.ui")
 
-        # --- Load UI ---
         loader = QUiLoader()
-        loaded_ui = loader.load(ui_file, self)  # parent=self
+        self.ui = loader.load(ui_file, self)
         ui_file.close()
 
-        if loaded_ui is None:
+        if self.ui is None:
             raise RuntimeError("Failed to load settings_tab.ui")
 
-        # --- Root layout for the tab ---
-        root_layout = QVBoxLayout(self)
-        root_layout.setContentsMargins(0, 0, 0, 0)
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.addWidget(self.ui)
 
-        # --- Scroll area ---
-        scroll_area = QScrollArea(self)
-        scroll_area.setWidgetResizable(True)
-        root_layout.addWidget(scroll_area)
+        # Collect all widgets for debug
+        self.widgets = {self.ui.objectName(): self.ui}
+        self.widgets.update(get_all_child_widgets(self.ui))
 
-        # --- Content container ---
-        scroll_area.setWidget(loaded_ui)
-
-        # --- Collect all widgets including root ---
-        self.widgets = {loaded_ui.objectName(): loaded_ui}  # include root
-        self.widgets.update(get_all_child_widgets(loaded_ui))  # include all descendants
-
-        # --- Debug dump ---
-        if logging.getLogger().isEnabledFor(logging.DEBUG):
-            logging.debug("=== SETTINGS TAB WIDGET DUMP ===")
-            for name in sorted(self.widgets.keys()):
-                logging.debug(name)
-            logging.debug("=== END WIDGET DUMP ===")
-
-        # --- Check required pages ---
-        required_pages = (
-            "app_settings_page",
-            "app_themes_page",
-            "data_relations_page",
-        )
-        for name in required_pages:
-            if name not in self.widgets:
-                raise RuntimeError(f"Required page '{name}' not found")
+        logging.debug("=== SETTINGS TAB WIDGET DUMP ===")
+        for name in sorted(self.widgets.keys()):
+            logging.debug(name)
+        logging.debug("=== END WIDGET DUMP ===")
 
     def _init_subtabs(self):
-        self.app_subtab = AppSettingsSubTab(
-            parent=self,
+        """Initialize all settings subtabs."""
+        settings_container = self  # The top-level widget loaded from UI
+
+        # Create subtabs
+        self.settings_subtab = AppSettingsSubTab(
+            parent=settings_container,
             settings_manager=self.settings_manager,
-            theme_manager=self.theme_manager,
-            widgets=get_all_child_widgets(self.widgets["app_settings_groupbox"]),
+            theme_manager=self.theme_manager
         )
 
-        self.theme_subtab = AppThemesSubTab(
-            parent=self,
-            settings_manager=self.settings_manager,
-            theme_manager=self.theme_manager,
-            widgets=get_all_child_widgets(self.widgets["app_themes_page"]),
-        )
+        # If you have other subtabs:
+        # self.themes_subtab = ThemesSubTab(parent=settings_container, ...)
+        # self.data_subtab = DataSubTab(parent=settings_container, ...)
 
-        self.data_relations_subtab = DataRelationsSubTab(
-            parent=self,
-            settings_manager=self.settings_manager,
-            theme_manager=self.theme_manager,
-            widgets=get_all_child_widgets(self.widgets["data_relations_page"]),
-        )
-
-        self.sub_tabs = [
-            self.app_subtab,
-            self.theme_subtab,
-            self.data_relations_subtab,
+        # Store all subtabs in a list for iteration
+        self.subtabs = [
+            self.settings_subtab,
+            # self.themes_subtab,
+            # self.data_subtab
         ]
 
-    # connect save & cancel
-    def _prepare_action_buttons(self):
-        # Register buttons
-        save_btn = self.widgets["app_settings_save_button"]
-        cancel_btn = self.widgets["app_settings_cancel_button"]
-
-        self.action_button_manager.register_button(
-            key="app_settings_save",
-            button=save_btn,
-            role="save",
-            handler=self.save_settings,
-        )
-
-        self.action_button_manager.register_button(
-            key="app_settings_cancel",
-            button=cancel_btn,
-            role="cancel",
-            handler=self.populate_forms_from_settings,
-        )
-
     def populate_forms_from_settings(self):
-        for tab in self.sub_tabs:
-            tab.load()
+        """Load saved settings into all subtabs."""
+        for subtab in self.subtabs:
+            subtab.load()
 
     def save_settings(self):
-        for tab in self.sub_tabs:
-            tab.save()
+        """Save all subtab forms to settings manager."""
+        for subtab in self.subtabs:
+            subtab.save()
         self.settings_manager.save_all()
 
     def is_dirty(self) -> bool:
-        return any(tab.is_dirty() for tab in self.sub_tabs)
+        """Return True if any subtab has unsaved changes."""
+        return any(subtab.is_dirty() for subtab in self.subtabs)

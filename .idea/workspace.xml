@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98d30cbf-2c6b-400d-bf4c-bdc9bb9556c3" name="Changes" comment="moved files into app_windows">
-      <change afterPath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_settings_subtab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_themes_subtab.py" afterDir="false" />
+    <list default="true" id="98d30cbf-2c6b-400d-bf4c-bdc9bb9556c3" name="Changes" comment="moved files into app_windows, but widgets are not yet found">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_windows/client/client_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/client/client_tab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_windows/dashboard/dashboard_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/dashboard/dashboard_tab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_windows/dashboard/dashboard_tab.ui" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/dashboard/dashboard_tab.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_windows/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/main_window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app_windows/settings/settings_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/settings/settings_tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_settings_subtab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_settings_subtab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_themes_subtab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_themes_subtab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/forms/settings/advisor_settings_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/forms/settings/advisor_settings_form.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/forms/settings/app_settings_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/forms/settings/app_settings_form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/forms/settings/mysql_settings_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/forms/settings/mysql_settings_form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/forms/settings/paperless_settings_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/forms/settings/paperless_settings_form.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767345826769</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="moved files into app_windows, but widgets are not yet found">
+      <option name="closed" value="true" />
+      <created>1767362291749</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1767362291749</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,7 +161,8 @@
     <MESSAGE value="complete resturcturing nearly finished, but many functions not yet working properly" />
     <MESSAGE value="before moving to app_windows and implementing LoggingManager" />
     <MESSAGE value="moved files into app_windows" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved files into app_windows" />
+    <MESSAGE value="moved files into app_windows, but widgets are not yet found" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved files into app_windows, but widgets are not yet found" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

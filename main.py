@@ -13,11 +13,11 @@ from db.db import close_pool
 
 
 async def main_async():
-    # 1️⃣ Create SettingsManager once
+    # 1️ Create SettingsManager once
     settings_manager = SettingsManager()
     settings_manager.load_from_disk()
 
-    # 2️⃣ Create MainWindow (ThemeManager is auto-created inside)
+    # 2️ Create MainWindow (ThemeManager is auto-created inside)
     window = MainWindow(settings_manager=settings_manager)
     window.show()
 
