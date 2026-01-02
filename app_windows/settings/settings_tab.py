@@ -33,7 +33,7 @@ class SettingsTab(QWidget):
 
     def load_ui(self):
         """Load the UI from the .ui file"""
-        ui_file = QFile("ui/settings_tab.ui")
+        ui_file = QFile("app_windows/settings/settings_tab.ui")
         if not ui_file.open(QFile.ReadOnly):
             raise RuntimeError("Cannot open settings_tab.ui")
         loader = QUiLoader()

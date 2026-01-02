@@ -7,7 +7,7 @@ import logging
 import qasync
 from PySide6.QtWidgets import QApplication
 
-from ui.main_window import MainWindow
+from app_windows.main_window import MainWindow
 from managers.settings_manager import SettingsManager
 from db.db import close_pool
 

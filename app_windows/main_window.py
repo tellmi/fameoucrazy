@@ -4,11 +4,10 @@
 from PySide6.QtWidgets import QMainWindow, QTabWidget
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
-from managers.settings_manager import SettingsManager
 from managers.theme_manager import ThemeManager
-from .dashboard_tab import DashboardTab
-from .client_tab import ClientTab
-from .settings_tab import SettingsTab
+from app_windows.dashboard.dashboard_tab import DashboardTab
+from app_windows.client.client_tab import ClientTab
+from app_windows.settings.settings_tab import SettingsTab
 from managers.logging_manager import LoggingManager
 
 
