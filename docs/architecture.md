@@ -1,138 +1,178 @@
-# Application Architecture Overview
+# UI Architecture – Settings & SubTabs
 
-This project follows a layered architecture with clearly separated responsibilities.
-
----
-
-## Folder Overview
-
-### domain/
-Contains business logic and rules. Defines *what the application means*, not how it is displayed or stored.  
-
-Examples:
-- Salutation selection logic
-- Fallback rules
-- Validation decisions
-
-> **Rule:** Must not depend on UI frameworks, databases, or storage mechanisms.
+This document describes the **final, working architecture** for the Settings tab and its subtabs. It replaces earlier experimental approaches and reflects the *stable mental model* now implemented in the codebase.
 
 ---
 
-### managers/
-Coordinates application behavior. Orchestrates interactions between UI, domain services, and infrastructure.  
+## 1. High‑level concept
 
-Examples:
-- `ActionButtonManager` – centralizes Save/Cancel button actions
-- `WidgetManager` – handles dynamic widget interactions
-- `SettingsManager` – loads, saves, and normalizes settings, including debug/logging configuration
+* **MainWindow** owns top‑level tabs (e.g. Settings)
+* **SettingsTab** is a *container* loaded from `settings_tab.ui`
+* `settings_tab.ui` already defines **empty pages** inside a `QTabWidget`
+* Each page acts as a **dock target** for exactly one subtab
+* Each subtab loads *its own UI* into its assigned page
+
+> SettingsTab manages *composition*, not UI details.
 
 ---
 
-### app_windows/
-Contains main application windows and their tabs.  
+## 2. File & responsibility overview
 
-Main navigation: 3 primary tabs → Dashboard, Client, Settings.  
-Settings tab itself: 3 subtabs → Settings, Themes, Data & Relations.  
-Each subtab has its own form class and registers Save/Cancel buttons with `ActionButtonManager`.  
-
+```
 app_windows/
-├─ main_window.py
-├─ dashboard/
-│ └─ dashboard_tab.py
-├─ client/
-│ └─ client_tab.py
 └─ settings/
-├─ settings_tab.py # main settings tab, handles subtab switching
-└─ sub_tabs/
-├─ app_settings_subtab.py
-├─ theme_subtab.py
-└─ data_relations_subtab.py
+   ├─ settings_tab.py           # orchestrator
+   ├─ settings_tab.ui           # QTabWidget + empty pages
+   └─ sub_tabs/
+      ├─ app_settings_subtab.py
+      ├─ app_settings_subtab.ui
+      ├─ app_themes_subtab.py
+      ├─ app_themes_subtab.ui
+      └─ data_relations_subtab.py (future)
+```
+
+```
+ui/forms/settings/
+├─ app_settings_form.py
+├─ app_themes_form.py
+└─ ...
+```
 
 ---
 
-### ui/
-User interface components.  
+## 3. settings_tab.ui (the docking contract)
 
-Subfolders:
-- `forms/` – form logic and field adapters  
-- `forms/settings/` – settings-specific forms  
-- `form_helpers/` – UI data helpers  
-- `widgets/` – reusable UI elements  
-- `dialogues/` – modal dialogs (About, Help, Debug Console)  
-- `utils.py` – general UI utility functions  
+`settings_tab.ui` defines:
 
-ui/
-├─ forms/
-│ ├─ input_form.py
-│ ├─ field_adapters.py
-│ └─ settings/
-│ ├─ app_settings_form.py
-│ ├─ advisor_settings_form.py
-│ ├─ mysql_settings_form.py
-│ └─ paperless_settings_form.py
-└─ utils.py
+* A `QTabWidget`
+* One empty `QWidget` **per subtab**
+* Each widget has a **stable objectName**
 
+Example:
 
-Notes:
-- UI code must not contain business logic  
-- Forms interact with `SettingsManager` for persistence  
-- `.ui` files are co-located with their corresponding `.py` classes  
-- Dialogues live in `ui/dialogues/`  
+* `app_settings_page`
+* `app_themes_page`
+* `data_relations_page`
+
+These widgets are **never replaced** — they are docking containers.
 
 ---
 
-### constants/
-Static values representing business facts or defaults.  
+## 4. SettingsTab responsibilities
 
-Examples:
-- Default settings (`DEFAULT_SETTINGS`)  
-- Static salutations  
-- Theme definitions (`THEMES`)  
+`SettingsTab` does **three things only**:
 
-> Contains no logic.
+1. Load `settings_tab.ui`
+2. Find docking pages by objectName
+3. Instantiate subtabs and attach them
 
----
+```python
+class SettingsTab(QWidget):
+    def __init__(...):
+        self._load_ui()
+        self._init_subtabs()
+        self.populate_forms_from_settings()
+```
 
-### db/
-Database access and persistence. Includes repositories, connection pools, and async operations.
+### `_init_subtabs()`
 
----
+```python
+app_settings_page = self.findChild(QWidget, "app_settings_page")
+app_themes_page   = self.findChild(QWidget, "app_themes_page")
+```
 
-### Debug / Logging Integration
-Debugging and logging are configurable through settings.  
+Each page is passed **as parent** to its subtab.
 
-Settings:
-- `debug_slider_position` – horizontal slider controlling debug level  
-  - 0 = Off  
-  - 1 = INFO  
-  - 2 = DEBUG  
-  - 3 = VERBOSE  
-- `log_to_file` – toggle to write logs externally  
-- Future toggle: open optional `DebugConsole` dialog to view runtime logs  
-
-Behavior:
-- Slider position defines debug/logging level  
-- `SettingsManager` persists slider state and maps it to `log_level`  
-- Logging affects console output, file output, and optional debug dialogs  
-
-Example snippet from `DEFAULT_SETTINGS`:
-
-DEFAULT_SETTINGS = {
-"app_settings": {
-"last_client_id": None,
-"app_language": "de",
-"app_theme": "light",
-"debug_slider_position": 0, # 0 = off, 1 = INFO, 2 = DEBUG, 3 = VERBOSE
-"log_to_file": False
-},
-...
-}
-
+SettingsTab never loads subtab UIs itself.
 
 ---
 
-### Guiding Principle
-- **Domain** decides *what*  
-- **Managers** decide *when*  
-- **UI** decides *how*  
-- **DB** decides *where*
+## 5. SubTab responsibilities
+
+Each `*SubTab` class:
+
+* Receives **exactly one parent container**
+* Loads its own `.ui` file
+* Inserts itself into the parent via a layout
+* Creates exactly one `Form`
+
+Example flow:
+
+```python
+AppThemesSubTab(parent=app_themes_page, ...)
+```
+
+### SubTab internal lifecycle
+
+1. Load `app_themes_subtab.ui`
+2. Attach UI to `parent` using `QVBoxLayout`
+3. Collect widgets via `get_all_child_widgets`
+4. Instantiate its Form
+
+SubTabs **never**:
+
+* Touch QTabWidget
+* Switch tabs
+* Know about other subtabs
+
+---
+
+## 6. Forms (leaf layer)
+
+Forms:
+
+* Bind widgets to settings keys
+* Implement `load()`, `save()`, `is_dirty()`
+
+They know nothing about:
+
+* Tabs
+* Subtabs
+* UI loading
+
+They receive a *ready-to-use widget tree*.
+
+---
+
+## 7. Adding a new subtab (official recipe)
+
+1. Add an empty page to `settings_tab.ui`
+
+   * Set objectName (e.g. `network_page`)
+2. Create `network_subtab.ui`
+3. Create `NetworkSubTab` class
+4. Create `NetworkForm`
+5. Register subtab in `_init_subtabs()`
+
+No existing code must be modified.
+
+---
+
+## 8. Why this architecture works
+
+✔ No dynamic tab creation
+✔ No implicit parenting
+✔ Stable objectName contracts
+✔ UI and logic are cleanly separated
+✔ Subtabs are independently testable
+
+This is **intentional static composition**, not magic.
+
+---
+
+## 9. What this architecture explicitly avoids
+
+* Loading `.ui` files into other `.ui` files
+* Creating QTabWidgets dynamically
+* Subtabs knowing about each other
+* Forms managing layouts
+
+---
+
+## 10. Status
+
+✅ Implemented
+✅ Stable
+✅ Debugged
+
+This document is the **single source of truth** for the Settings UI architecture.

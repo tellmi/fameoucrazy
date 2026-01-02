@@ -1,31 +1,48 @@
 # app_windows/settings/sub_tabs/app_themes_subtab.py
 # -*- coding: utf-8 -*-
 
-import logging
-from ui.forms.settings.app_settings_form import AppSettingsForm
+from PySide6.QtWidgets import QVBoxLayout
+from PySide6.QtUiTools import QUiLoader
+from PySide6.QtCore import QFile
+
+from ui.forms.settings.app_themes_form import AppThemesForm
 from ui.utils import get_all_child_widgets
 
+
 class AppThemesSubTab:
-    def __init__(self, parent, settings_manager, theme_manager, container):
+    def __init__(self, parent, settings_manager, theme_manager):
         self.parent = parent
         self.settings_manager = settings_manager
         self.theme_manager = theme_manager
 
-        # container is the page for themes, e.g., parent.widgets['app_themes_page']
-        self.container = container
-        self.widgets = {container.objectName(): container}
-        self.widgets.update(get_all_child_widgets(container))
-
+        self._load_ui()
         self._init_forms()
 
+    def _load_ui(self):
+        ui_file = QFile("app_windows/settings/sub_tabs/app_themes_subtab.ui")
+        if not ui_file.open(QFile.ReadOnly):
+            raise RuntimeError("Cannot open app_themes_subtab.ui")
+
+        loader = QUiLoader()
+        self.container = loader.load(ui_file, self.parent)
+        ui_file.close()
+
+        if self.container is None:
+            raise RuntimeError("Failed to load app_themes_subtab.ui")
+
+        layout = QVBoxLayout(self.parent)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.addWidget(self.container)
+
+        self.widgets = {self.container.objectName(): self.container}
+        self.widgets.update(get_all_child_widgets(self.container))
+
     def _init_forms(self):
-        """Initialize the theme settings form."""
-        # Only registers fields if the corresponding widget exists
-        self.form = AppSettingsForm(
+        self.form = AppThemesForm(
             ui=self.container,
             settings_manager=self.settings_manager,
             theme_manager=self.theme_manager,
-            widgets=self.widgets
+            widgets=self.widgets,
         )
 
     def load(self):

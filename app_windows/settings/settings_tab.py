@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import logging
-from PySide6.QtWidgets import QWidget, QVBoxLayout
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QTabWidget
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
 
@@ -50,26 +50,43 @@ class SettingsTab(QWidget):
         logging.debug("=== END WIDGET DUMP ===")
 
     def _init_subtabs(self):
-        """Initialize all settings subtabs."""
-        settings_container = self  # The top-level widget loaded from UI
+        app_settings_page = self.findChild(QWidget, "app_settings_page")
+        app_themes_page = self.findChild(QWidget, "app_themes_page")
+        data_relations_page = self.findChild(QWidget, "data_relations_page")
 
-        # Create subtabs
-        self.settings_subtab = AppSettingsSubTab(
-            parent=settings_container,
-            settings_manager=self.settings_manager,
-            theme_manager=self.theme_manager
+        #if not all([app_settings_page, app_themes_page, data_relations_page]):
+        #    raise RuntimeError("Settings subtab pages not found")
+        if not app_settings_page:
+            raise RuntimeError("app_settings_page not found")
+
+        if not app_themes_page:
+            raise RuntimeError("app_themes_page not found")
+
+        self.subtabs = []
+
+        self.subtabs.append(
+            AppSettingsSubTab(
+                parent=app_settings_page,
+                settings_manager=self.settings_manager,
+                theme_manager=self.theme_manager,
+            )
         )
 
-        # If you have other subtabs:
-        # self.themes_subtab = ThemesSubTab(parent=settings_container, ...)
-        # self.data_subtab = DataSubTab(parent=settings_container, ...)
+        self.subtabs.append(
+            AppThemesSubTab(
+                parent=app_themes_page,
+                settings_manager=self.settings_manager,
+                theme_manager=self.theme_manager,
+            )
+        )
 
-        # Store all subtabs in a list for iteration
-        self.subtabs = [
-            self.settings_subtab,
-            # self.themes_subtab,
-            # self.data_subtab
-        ]
+        #self.subtabs.append(
+        #    DataRelationsSubTab(
+        #        parent=data_page,
+        #        settings_manager=self.settings_manager,
+        #        theme_manager=self.theme_manager,
+        #    )
+        #)
 
     def populate_forms_from_settings(self):
         """Load saved settings into all subtabs."""

@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98d30cbf-2c6b-400d-bf4c-bdc9bb9556c3" name="Changes" comment="moved files into app_windows, but widgets are not yet found">
+    <list default="true" id="98d30cbf-2c6b-400d-bf4c-bdc9bb9556c3" name="Changes" comment="settings form found, but in the wrong tab and no sub-NAVIGATION">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app_windows/settings/settings_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/settings/settings_tab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_settings_subtab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_settings_subtab.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_themes_subtab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_themes_subtab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/forms/settings/advisor_settings_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/forms/settings/advisor_settings_form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/forms/settings/app_settings_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/forms/settings/app_settings_form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/forms/settings/mysql_settings_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/forms/settings/mysql_settings_form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/forms/settings/paperless_settings_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/forms/settings/paperless_settings_form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/architecture.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/architecture.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/forms/settings/app_themes_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/forms/settings/app_themes_form.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767362291749</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="settings form found, but in the wrong tab and no sub-NAVIGATION">
+      <option name="closed" value="true" />
+      <created>1767376377578</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1767376377578</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,7 +166,8 @@
     <MESSAGE value="before moving to app_windows and implementing LoggingManager" />
     <MESSAGE value="moved files into app_windows" />
     <MESSAGE value="moved files into app_windows, but widgets are not yet found" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved files into app_windows, but widgets are not yet found" />
+    <MESSAGE value="settings form found, but in the wrong tab and no sub-NAVIGATION" />
+    <option name="LAST_COMMIT_MESSAGE" value="settings form found, but in the wrong tab and no sub-NAVIGATION" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

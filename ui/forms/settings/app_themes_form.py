@@ -4,7 +4,7 @@
 from ui.forms.input_form import InputForm
 from ui.forms.field_adapters import *
 
-class AppSettingsForm(InputForm):
+class AppThemesForm(InputForm):
     def __init__(self, ui, settings_manager, theme_manager, widgets=None):
         super().__init__(ui, settings_manager, theme_manager, widgets=widgets)
 
