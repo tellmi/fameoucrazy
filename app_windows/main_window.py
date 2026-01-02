@@ -38,7 +38,7 @@ class MainWindow(QMainWindow):
 
 
     def load_ui(self):
-        ui_file = QFile("ui/main_window.ui")
+        ui_file = QFile("app_windows/main_window.ui")
         if not ui_file.open(QFile.ReadOnly):
             raise RuntimeError("Cannot open main_window.ui")
 

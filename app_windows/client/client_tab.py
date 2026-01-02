@@ -19,7 +19,7 @@ class ClientTab(QWidget):
         self.widgets = get_all_child_widgets(self)
 
     def load_ui(self):
-        ui_file = QFile("ui/client_tab.ui")
+        ui_file = QFile("app_windows/client/client_tab.ui")
         if not ui_file.open(QFile.ReadOnly):
             raise RuntimeError("Cannot open client_tab.ui")
 

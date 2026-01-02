@@ -9,6 +9,7 @@ class AppSettingsForm(InputForm):
         super().__init__(ui, settings_manager, theme_manager, widgets=widgets)
 
         # --- App Language combo field ---
+        lang_key = "app_settings.app_language"
         self.register_field(
             key=lang_key,
             widget=self.widgets["app_settings_language_combo"],

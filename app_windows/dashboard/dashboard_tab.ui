@@ -1,6 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DashboardTab</class>
+ <class>dashboard_tab</class>
  <widget class="QWidget" name="dashboard_tab">
-  <layout class="QVBoxLayout" name="verticalLayout"/>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1124</width>
+    <height>703</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QScrollArea" name="dashboard_scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1104</width>
+        <height>683</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
+ <resources/>
+ <connections/>
 </ui>

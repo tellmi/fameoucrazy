@@ -4,7 +4,7 @@
 from PySide6.QtWidgets import QWidget
 
 
-def get_all_child_widgets(root: QWidget) -> list[QWidget]:
+def get_all_child_widgets(parent: QWidget) -> dict:
     """
     Recursively collect all child widgets of a given root widget.
 
@@ -12,9 +12,14 @@ def get_all_child_widgets(root: QWidget) -> list[QWidget]:
     - generic UI updates
     - field mapping
     - validation logic
+
+    Returns dict of all child widgets recursively by objectName
     """
     widgets = {}
-    for w in root.findChildren(QWidget):
-        if w.objectName():
-            widgets[w.objectName()] = w
+    for child in parent.findChildren(QWidget):
+        name = child.objectName()
+        if name:
+            widgets[name] = child
+        # Recursively include grandchildren
+        widgets.update(get_all_child_widgets(child))
     return widgets
