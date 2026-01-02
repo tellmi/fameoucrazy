@@ -3,6 +3,7 @@
 
 from constants.paths import SETTINGS_FILE
 from constants.default_settings import DEFAULT_SETTINGS
+from managers.logging_manager import LoggingManager
 import json
 import logging
 import copy
@@ -47,6 +48,9 @@ class SettingsManager:
         if loaded_from in ("backup", "defaults"):
             self.save()
 
+        # apply logging configuration once settings are known
+        LoggingManager.apply_settings(self)
+
     def save(self):
         if self.settings_file.exists():
             backup = self.settings_file.with_suffix(".bak")
@@ -59,6 +63,11 @@ class SettingsManager:
             json.dump(self.settings, f, ensure_ascii=False, indent=4)
 
         logging.info(f"settings saved successfully in {self.settings_file}.")
+
+        # apply logging configuration once settings are known and saved
+        LoggingManager.apply_settings(self)
+
+        logging.debug("New logging configuration active")
 
     def get(self, key, default=None):
         keys = key.split(".")

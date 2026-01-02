@@ -1,45 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98d30cbf-2c6b-400d-bf4c-bdc9bb9556c3" name="Changes" comment="ui loading and showing&#10;next step adding slots">
-      <change afterPath="$PROJECT_DIR$/constants/default_settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/init.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/salutations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/themes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/architecture.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/dual-host_ database_connection.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/salutation_repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/salutations_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/managers/input_form_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/form_helpers/combo_fillers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/form_helpers/date_helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/form_helpers/init.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/form_helpers/line_edit_helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/forms/field_adapters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/forms/input_form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/forms/settings/advisor_settings_form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/forms/settings/app_settings_form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/forms/settings/app_themes_form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/forms/settings/mysql_settings_form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/forms/settings/paperless_settings_form.py" afterDir="false" />
+    <list default="true" id="98d30cbf-2c6b-400d-bf4c-bdc9bb9556c3" name="Changes" comment="complete resturcturing nearly finished, but many functions not yet working properly">
+      <change afterPath="$PROJECT_DIR$/docs/flows.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/managers/logging_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/default_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/default_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/architecture.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/architecture.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/managers/settings_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/settings_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/managers/theme_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/theme_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/paths.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects/settings.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/main_window.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main_window.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/settings_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/settings_tab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/settings_tab.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/settings_tab.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/action_button.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/action_button.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/action_button_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/action_button_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/haptic_button.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/haptic_button.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/init.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/widgets/widget_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/widget_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,18 +64,19 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/eder/PycharmProjects/fameoucrazy/ui/forms/settings",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "last_opened_file_path": "/home/eder/PycharmProjects/fameoucrazy/managers",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/managers" />
       <recent name="$PROJECT_DIR$/ui/forms/settings" />
       <recent name="$PROJECT_DIR$/ui/form_helpers" />
-      <recent name="$PROJECT_DIR$/managers" />
       <recent name="$PROJECT_DIR$/ui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app_windows" />
       <recent name="$PROJECT_DIR$/constants" />
       <recent name="$PROJECT_DIR$/managers" />
     </key>
@@ -127,12 +97,32 @@
       <option name="project" value="LOCAL" />
       <updated>1766796056291</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="complete resturcturing nearly finished, but many functions not yet working properly">
+      <option name="closed" value="true" />
+      <created>1767306433732</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1767306433732</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ui loading and showing&#10;next step adding slots" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui loading and showing&#10;next step adding slots" />
+    <MESSAGE value="complete resturcturing nearly finished, but many functions not yet working properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete resturcturing nearly finished, but many functions not yet working properly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

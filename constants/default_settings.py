@@ -9,7 +9,9 @@ DEFAULT_SETTINGS = {
     "app_settings": {
         "last_client_id": None,
         "app_language": "de",
-        "app_theme": "light"   # recently saved theme name
+        "app_theme": "light",
+        "log_level": "INFO",  # can be "OFF", "INFO", "DEBUG", "VERBOSE"
+        "log_to_file": False  # separate toggle for writing logs to external file
     },
     "advisor": {
         "salutation": None,
