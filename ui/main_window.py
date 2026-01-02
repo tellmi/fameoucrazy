@@ -9,6 +9,7 @@ from managers.theme_manager import ThemeManager
 from .dashboard_tab import DashboardTab
 from .client_tab import ClientTab
 from .settings_tab import SettingsTab
+from managers.logging_manager import LoggingManager
 
 
 class MainWindow(QMainWindow):
@@ -24,6 +25,8 @@ class MainWindow(QMainWindow):
             self.theme_manager = ThemeManager(widget=self, settings_manager=settings_manager)
         else:
             self.theme_manager = theme_manager
+
+        LoggingManager.apply_settings(settings_manager.settings)
 
         # Load UI and init tabs
         self.load_ui()
