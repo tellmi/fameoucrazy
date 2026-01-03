@@ -8,6 +8,7 @@ from PySide6.QtCore import QFile
 from ui.forms.settings.advisor_settings_form import AdvisorSettingsForm
 from ui.forms.settings.mysql_settings_form import MySQLSettingsForm
 from ui.forms.settings.paperless_settings_form import PaperlessSettingsForm
+from ui.form_helpers.custom_ui_loader import CustomUiLoader
 
 class AppSettingsSubTab:
     def __init__(self, parent, settings_manager, theme_manager):
@@ -18,7 +19,7 @@ class AppSettingsSubTab:
         # Load the UI file
         ui_file = QFile("app_windows/settings/sub_tabs/app_settings_subtab.ui")
         ui_file.open(QFile.ReadOnly)
-        loader = QUiLoader()
+        loader = CustomUiLoader()
         self.container = loader.load(ui_file, parent)
         ui_file.close()
 

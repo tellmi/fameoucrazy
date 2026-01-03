@@ -7,6 +7,7 @@ from PySide6.QtCore import QFile
 
 from ui.forms.settings.app_themes_form import AppThemesForm
 from ui.utils import get_all_child_widgets
+from ui.form_helpers.custom_ui_loader import CustomUiLoader
 
 
 class AppThemesSubTab:
@@ -23,7 +24,7 @@ class AppThemesSubTab:
         if not ui_file.open(QFile.ReadOnly):
             raise RuntimeError("Cannot open app_themes_subtab.ui")
 
-        loader = QUiLoader()
+        loader = CustomUiLoader()
         self.container = loader.load(ui_file, self.parent)
         ui_file.close()
 
@@ -34,8 +35,12 @@ class AppThemesSubTab:
         layout.setContentsMargins(0, 0, 0, 0)
         layout.addWidget(self.container)
 
+        # collect widgets
         self.widgets = {self.container.objectName(): self.container}
         self.widgets.update(get_all_child_widgets(self.container))
+
+        # --- DEBUG: list all widgets found ---
+        print("[DEBUG] widgets keys:", list(self.widgets.keys()))
 
     def _init_forms(self):
         self.form = AppThemesForm(

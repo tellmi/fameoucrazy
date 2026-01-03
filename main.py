@@ -51,3 +51,4 @@ if __name__ == "__main__":
     finally:
         loop.close()
         logging.info("[MAIN] Application exited cleanly")
+

@@ -6,6 +6,7 @@ from ui.utils import get_all_child_widgets
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
 import sys
+from ui.form_helpers.custom_ui_loader import CustomUiLoader
 
 class ClientTab(QWidget):
     def __init__(self, parent, settings_manager, theme_manager):
@@ -23,8 +24,8 @@ class ClientTab(QWidget):
         if not ui_file.open(QFile.ReadOnly):
             raise RuntimeError("Cannot open client_tab.ui")
 
-        loader = QUiLoader()
-        loaded_ui = loader.load(ui_file, self)
+        loader = CustomUiLoader()
+        loaded_ui = loader.load(ui_file)
         ui_file.close()
 
         if loaded_ui is None:

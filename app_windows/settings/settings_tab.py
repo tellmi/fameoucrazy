@@ -10,6 +10,7 @@ from ui.utils import get_all_child_widgets
 from app_windows.settings.sub_tabs.app_settings_subtab import AppSettingsSubTab
 from app_windows.settings.sub_tabs.app_themes_subtab import AppThemesSubTab
 # from app_windows.settings.sub_tabs.data_relations_subtab import DataRelationsSubTab
+from ui.form_helpers.custom_ui_loader import CustomUiLoader
 
 
 class SettingsTab(QWidget):
@@ -29,7 +30,7 @@ class SettingsTab(QWidget):
         if not ui_file.open(QFile.ReadOnly):
             raise RuntimeError("Cannot open settings_tab.ui")
 
-        loader = QUiLoader()
+        loader = CustomUiLoader()
         self.ui = loader.load(ui_file, self)
         ui_file.close()
 

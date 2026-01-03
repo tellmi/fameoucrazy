@@ -3,12 +3,13 @@
 
 from PySide6.QtWidgets import QMainWindow, QTabWidget
 from PySide6.QtUiTools import QUiLoader
-from PySide6.QtCore import QFile
+from PySide6.QtCore import QFile, QTimer
 from managers.theme_manager import ThemeManager
 from app_windows.dashboard.dashboard_tab import DashboardTab
 from app_windows.client.client_tab import ClientTab
 from app_windows.settings.settings_tab import SettingsTab
 from managers.logging_manager import LoggingManager
+from ui.form_helpers.custom_ui_loader import CustomUiLoader
 
 
 class MainWindow(QMainWindow):
@@ -21,7 +22,7 @@ class MainWindow(QMainWindow):
 
         # Automatically create ThemeManager if not passed
         if theme_manager is None:
-            self.theme_manager = ThemeManager(widget=self, settings_manager=settings_manager)
+            self.theme_manager = ThemeManager(settings_manager=settings_manager)
         else:
             self.theme_manager = theme_manager
 
@@ -33,8 +34,11 @@ class MainWindow(QMainWindow):
 
         # Apply last theme
         last_theme = self.settings_manager.get_current_theme()
-        self.theme_manager.apply_theme(last_theme)
-        self.theme_manager._saved_theme_snapshot = self.theme_manager.current_theme.copy()
+        #self.theme_manager.apply_theme(last_theme)
+        QTimer.singleShot(0, lambda: (
+            self.theme_manager.apply_theme(last_theme),
+            setattr(self.theme_manager, "_saved_theme_snapshot", self.theme_manager.current_theme.copy())
+        ))
 
 
     def load_ui(self):
@@ -42,8 +46,8 @@ class MainWindow(QMainWindow):
         if not ui_file.open(QFile.ReadOnly):
             raise RuntimeError("Cannot open main_window.ui")
 
-        loader = QUiLoader()
-        loaded_ui = loader.load(ui_file)  # Do NOT pass self
+        loader = CustomUiLoader()
+        loaded_ui = loader.load(ui_file)
         ui_file.close()
 
         if loaded_ui is None:

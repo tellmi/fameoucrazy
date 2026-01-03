@@ -2,11 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98d30cbf-2c6b-400d-bf4c-bdc9bb9556c3" name="Changes" comment="settings form found, but in the wrong tab and no sub-NAVIGATION">
+      <change afterPath="$PROJECT_DIR$/constants/intermediate_rolemapping.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/colors_themes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/form_helpers/custom_ui_loader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_windows/client/client_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/client/client_tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_windows/client/client_tab.ui" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/client/client_tab.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_windows/dashboard/dashboard_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/dashboard/dashboard_tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_windows/dashboard/dashboard_tab.ui" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/dashboard/dashboard_tab.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_windows/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/main_window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app_windows/settings/settings_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/settings/settings_tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_settings_subtab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_settings_subtab.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_themes_subtab.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_windows/settings/sub_tabs/app_themes_subtab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/architecture.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/architecture.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/theme_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/managers/theme_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/stylesheet.qss" beforeDir="false" afterPath="$PROJECT_DIR$/objects/stylesheet.qss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/forms/settings/app_themes_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/forms/settings/app_themes_form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/advanced_animated_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/advanced_animated_toggle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/haptic_button.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/haptic_button.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +35,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -52,6 +66,7 @@
     "Python.advanced_animated_toggle.executor": "Run",
     "Python.calendar_popup.executor": "Run",
     "Python.client_tab.executor": "Run",
+    "Python.dashboard_tab.executor": "Run",
     "Python.haptic_button.executor": "Run",
     "Python.init.executor": "Run",
     "Python.main.executor": "Run",

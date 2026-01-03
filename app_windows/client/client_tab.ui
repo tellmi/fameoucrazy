@@ -32,7 +32,7 @@
     <string>Klienten exportieren</string>
    </property>
    <property name="icon">
-    <iconset resource="../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/fameoucrazy_ressources.qrc">
+    <iconset>
      <normaloff>:/icons/icons/application-export.png</normaloff>:/icons/icons/application-export.png</iconset>
    </property>
   </widget>
@@ -59,7 +59,7 @@
     <string>neuer Klient</string>
    </property>
    <property name="icon">
-    <iconset resource="../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/fameoucrazy_ressources.qrc">
+    <iconset>
      <normaloff>:/icons/icons/plus.png</normaloff>:/icons/icons/plus.png</iconset>
    </property>
   </widget>
@@ -145,7 +145,7 @@
           <string>Bild hochladen</string>
          </property>
          <property name="icon">
-          <iconset resource="../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/fameoucrazy_ressources.qrc">
+          <iconset>
            <normaloff>:/icons/icons/drive-upload.png</normaloff>:/icons/icons/drive-upload.png</iconset>
          </property>
         </widget>
@@ -364,7 +364,7 @@
           <string>Bild löschen</string>
          </property>
          <property name="icon">
-          <iconset resource="../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/fameoucrazy_ressources.qrc">
+          <iconset>
            <normaloff>:/icons/icons/minus.png</normaloff>:/icons/icons/minus.png</iconset>
          </property>
         </widget>
@@ -515,7 +515,7 @@
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QFrame" name="nursing_home_accomodation_toggle_4">
+        <widget class="QFrame" name="nursing_home_accomodation_toggle">
          <property name="maximumSize">
           <size>
            <width>30</width>
@@ -937,7 +937,7 @@
     <string>Klienten löschen</string>
    </property>
    <property name="icon">
-    <iconset resource="../../../Python-Projects/fameoucrazy_vor_Neustrukturierung/fameoucrazy_ressources.qrc">
+    <iconset>
      <normaloff>:/icons/icons/minus.png</normaloff>:/icons/icons/minus.png</iconset>
    </property>
   </widget>

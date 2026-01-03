@@ -60,9 +60,8 @@ class HapticButton(QPushButton):
         self._animate(down=False)
 
     def _animate(self, down: bool):
-        def _animate(self, down: bool):
-            if not self._base_geometry:
-                self._base_geometry = self.geometry()
+        if not self._base_geometry:
+            self._base_geometry = self.geometry()
 
         end = self._base_geometry
         if down:

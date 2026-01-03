@@ -1,41 +1,49 @@
-/* /objects/stylesheet.qss */
-
+/* ===============================
+   Toggles
+   =============================== */
 AdvancedAnimatedToggle {
-    qproperty-offColor: ${secondary};
-    qproperty-onColor: ${main};
-    qproperty-handleColor: ${handle};
-    qproperty-borderColor: ${main};
+    qproperty-offColor: ${accent_secondary};
+    qproperty-onColor: ${accent_primary};
+    qproperty-handleColor: ${border_default};
+    qproperty-borderColor: ${border_default};
 }
 
 AdvancedAnimatedToggle:hover {
-    qproperty-offColor: ${secondary_hover};
+    qproperty-offColor: ${accent_secondary_hover};
 }
-
 
 AdvancedAnimatedToggle:checked {
-    border-color: ${main};
+    border-color: ${accent_primary};
 }
 
-
+/* ===============================
+   Text Inputs
+   =============================== */
 QLineEdit, QTextEdit {
-    background-color: ${background};
-    color: ${main};
-    border: 1px solid ${main};
+    background-color: ${surface_widget};
+    color: ${text_primary};
+    border: 1px solid ${border_default};
     border-radius: 4px;
 }
 
+/* ===============================
+   Labels
+   =============================== */
 QLabel {
-    color: ${main};
+    color: ${text_primary};
 }
 
+/* ===============================
+   Buttons
+   =============================== */
 QPushButton {
-    background-color: ${main};
-    color: ${handle};
+    background-color: ${accent_primary};
+    color: ${text_primary};
     border-radius: 4px;
 }
 
 QPushButton:hover {
-    background-color: ${main_hover};
+    background-color: ${accent_primary_hover};
 }
 
 QPushButton[editable="false"] {
@@ -44,4 +52,19 @@ QPushButton[editable="false"] {
 
 QPushButton[editable="true"] {
     opacity: 1.0;
+}
+
+/* ===============================
+   Containers (intensity-based)
+   =============================== */
+#main_panel {
+    background-color: ${main_panel};
+}
+
+#sidebar {
+    background-color: ${sidebar};
+}
+
+#popup {
+    background-color: ${popup};
 }
